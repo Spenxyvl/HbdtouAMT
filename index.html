@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To my Baee</title>
+<link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root { --card-bg: rgba(255,255,255,0.9); --pink:#ff99cc; --pink-dark:#ff66a3; }
+* { box-sizing: border-box; }
+
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background-image:url('foto/background.gif');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow:hidden;
+}
+
+.container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  flex-direction:column;
+  position:relative;
+}
+
+/* Popup & Question */
+#popup,#questionPage,#galleryPage {
+  display:none;
+  text-align:center;
+  background:var(--card-bg);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.1);
+  max-width:min(900px,95vw);
+}
+#popup.active,#questionPage.active,#galleryPage.active {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+button {
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background-color:var(--pink);
+  color:#fff;
+  font-size:16px;
+  margin-top:20px;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+button:hover { background-color:var(--pink-dark); }
+#noBtn { position:absolute; }
+
+/* Gallery responsive & seamless */
+.gallery-container {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  cursor: grab;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 56.25%; /* rasio 16:9 */
+}
+
+.gallery {
+  display: flex;
+  position: absolute;
+  top:0; left:0;
+  height: 100%;
+}
+
+.gallery img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+  margin-right: 10px;
+}
+
+/* Background decor */
+.background-decor{
+  position:fixed;inset:0;overflow:hidden;z-index:-1;
+}
+.flower,.butterfly{
+  position:absolute;opacity:0.6;
+  animation: floatUp 20s linear infinite;
+}
+.butterfly{ animation: floatFly 15s ease-in-out infinite; }
+@keyframes floatUp{
+  0%{ transform: translateY(100vh) scale(0.5); }
+  100%{ transform: translateY(-10vh) scale(1); }
+}
+@keyframes floatFly{
+  0%{ transform: translate(0,0) rotate(0deg); }
+  50%{ transform: translate(50px,-200px) rotate(30deg); }
+  100%{ transform: translate(-20px,-400px) rotate(-15deg); }
+}
+</style>
+</head>
+<body>
+
+<div class="background-decor">
+  <img src="bunga.png" class="flower" style="left:10%; animation-delay:0s; width:40px;">
+  <img src="bunga.png" class="flower" style="left:70%; animation-delay:3s; width:50px;">
+  <img src="kupu.png"  class="butterfly" style="left:30%; top:80%; width:60px; animation-delay:1s;">
+  <img src="kupu.png"  class="butterfly" style="left:80%; top:90%; width:40px; animation-delay:5s;">
+</div>
+
+<div class="container">
+  <!-- Popup -->
+  <div id="popup" class="active">
+    <h2 id="popupText">Happy Birthday 22nd for u Myat Thwe !! I wish you all the best 🥳🤭🥳</h2>
+    <button onclick="nextPopup()">tap!</button>
+  </div>
+
+  <!-- Question -->
+  <div id="questionPage">
+    <h2><b>It doesn't mean too much, but i prepared this little thing for u 🤗</b><br><b>I hope u like it </b></h2>
+    <div>
+      <button onclick="goToGallery()">Yess</button>
+      <button id="noBtn" onclick="moveNoBtn()">Nooo</button>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div id="galleryPage">
+    <audio id="audio" autoplay muted loop>
+      <source src="lagu.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <h2><b>For the prettiest girl i’ve ever met 💗. Thank you for these memories 💞</b></h2>
+
+    <div class="gallery-container">
+      <div class="gallery" id="gallery">
+        <img src="foto/1.jpg" alt="Foto kamu">
+        <img src="foto/2.jpg" alt="Foto kamu">
+        <img src="foto/3.jpg" alt="Foto kamu">
+        <img src="foto/4.jpg" alt="Foto kamu">
+        <img src="foto/5.jpg" alt="Foto kamu">
+        <img src="foto/6.jpg" alt="Foto kamu">
+        <img src="foto/7.jpg" alt="Foto kamu">
+        <img src="foto/8.jpg" alt="Foto kamu">
+        <img src="foto/9.jpg" alt="Foto kamu">
+        <img src="foto/10.jpg" alt="Foto kamu">
+        <img src="foto/11.jpg" alt="Foto kamu">
+        <img src="foto/12.jpg" alt="Foto kamu">
+        <img src="foto/13.jpg" alt="Foto kamu">
+        <img src="foto/14.jpg" alt="Foto kamu">
+        <img src="foto/15.jpg" alt="Foto kamu">
+        <img src="foto/16.jpg" alt="Foto kamu">
+        <img src="foto/17.jpg" alt="Foto kamu">
+        <img src="foto/18.jpg" alt="Foto kamu">
+        <img src="foto/19.jpg" alt="Foto kamu">
+        <img src="foto/20.jpg" alt="Foto kamu">
+        <img src="foto/21.jpg" alt="Foto kamu">
+        <img src="foto/22.jpg" alt="Foto kamu">
+        <img src="foto/23.jpg" alt="Foto kamu">
+        <img src="foto/24.jpg" alt="Foto kamu">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const messages = [
+  "I get lost in your eyes every single time.",
+  "Sorry to bother u. This will be the last time, i promise u...✌️",
+  "We met in a beautiful way, so if we ever had to part, i hope we can do it with a kind one too ❤️",
+  "Don’t worry, I won’t reach out again. This is not to make u feel bad or pressured",
+  "I just hope u won’t feel the need to block me on everything, even on Mobile Legends. I promise not to cause u any problems. It’s enough for me to simply see u from afar 🤐 We can be friends,, right?? ☹️",
+  "I'm sorry if this makes u uncomfortable but since i've already make it i should just sent it to u.🤭.",
+  "I know that u are bored of me and get tired of me. It's not ur fault at all. I know myself more than you about that. That's okay ☺️",
+  "I miss you a lot you know,,, Don't u even miss me even for a little bit?? 😖. I miss ur voice, the way u laugh, ur smile... the way ur eyes look at me. AAAAAAA I just miss everything about u !!",
+  "I will never hate u because of what u do, as long it's can make u happier baee. I will just blame and hate myself for everything that happened.",
+  "Thank you for the memories even it’s only for a short time Myat Thwe. I love it and soooooo grateful!!🥰 ",
+  "I will treasure this memories, i can't reminiscing it at all since u delete all the chat 🥺. But it will be forever in my head.",
+  "Even tho u didn't acknowledge me as one of ur bf, i still lovvvve youuu so muchhh!! 💖 And i didn't regret it at all. Thank you for that fake short memories it was beautiful for me and i'm sooooooo happy!! 😆"
+];
+let msgIdx = 0;
+function nextPopup(){
+  msgIdx++;
+  if (msgIdx < messages.length){
+    document.getElementById("popupText").innerText = messages[msgIdx];
+  } else {
+    document.getElementById("popup").classList.remove("active");
+    document.getElementById("questionPage").classList.add("active");
+  }
+}
+function moveNoBtn(){
+  const btn = document.getElementById("noBtn");
+  const maxX = window.innerWidth - btn.offsetWidth - 10;
+  const maxY = window.innerHeight - btn.offsetHeight - 10;
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+  btn.style.left = x + 'px';
+  btn.style.top  = y + 'px';
+}
+function goToGallery(){
+  document.getElementById("questionPage").classList.remove("active");
+  document.getElementById("galleryPage").classList.add("active");
+  const audio = document.getElementById('audio');
+  audio.muted = false;
+  audio.play().catch(()=>{});
+  initGallery();
+}
+document.addEventListener("click", () => {
+  const audio = document.getElementById('audio');
+  if(audio){audio.muted=false; audio.play().catch(()=>{});}
+}, {passive:true});
+
+// ======== Gallery Seamless Endless ========
+function initGallery(){
+  const container = document.querySelector(".gallery-container");
+  const track = document.getElementById("gallery");
+  if(!container||!track) return;
+
+  // Duplikat semua gambar untuk seamless effect
+  track.innerHTML += track.innerHTML;
+
+  let isDragging=false, startX=0, scrollLeft=0;
+  let isHold=false;
+  const speed=0.5;
+
+  // Drag / swipe
+  container.addEventListener('mousedown', e=>{
+    isDragging=true;
+    startX=e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    isHold=true;
+  });
+  container.addEventListener('mouseleave', ()=>{isDragging=false; isHold=false;});
+  container.addEventListener('mouseup', ()=>{isDragging=false; isHold=false;});
+  container.addEventListener('mousemove', e=>{
+    if(!isDragging) return;
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch support
+  container.addEventListener('touchstart', e=>{
+    isDragging=true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    isHold=true;
+  }, {passive:true});
+  container.addEventListener('touchend', ()=>{isDragging=false; isHold=false;}, {passive:true});
+  container.addEventListener('touchmove', e=>{
+    if(!isDragging) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+  }, {passive:true});
+
+  // Auto-scroll seamless
+  function animate(){
+    if(!isHold){
+      container.scrollLeft += speed;
+      // Reset scroll untuk seamless
+      if(container.scrollLeft >= track.scrollWidth/2){
+        container.scrollLeft -= track.scrollWidth/2;
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Pause on hold
+  container.addEventListener('mousedown', ()=>{isHold=true;});
+  container.addEventListener('mouseup', ()=>{isHold=false;});
+  container.addEventListener('touchstart', ()=>{isHold=true;});
+  container.addEventListener('touchend', ()=>{isHold=false;});
+}
+</script>
+</body>
+</html>
